@@ -14,46 +14,29 @@
 
 'use strict';
 
-// Код возьмите из предыдущего домашнего задания
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-if (numberOfFilms < 10) {
-     console.log("Просмотрено довольно мало фильмов");
-} else if (numberOfFilms <= 30) {
-    console.log("Вы классический зритель");
-} else if (numberOfFilms > 30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Произошла ошибка");
-    
+/* function calc(a, b) {
+    return (a + b);
 }
 
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6)); */
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function() {
+    console.log("Hello");
 };
 
-for (let i = 0; i < numberOfFilms; i++) {
-    let  a = prompt('Один из последних просмотренных фильмов?', '');
-    while (a == null || a == '' || a.length > 50) {
-        console.log("Error");
-        a = prompt('Один из последних просмотренных фильмов?', '');
-    }
-    
-    let  b = prompt('На сколько вы оцените его?', '');
-    while (b < 1 || b > 10) {
-        console.log("Error");
-        b = prompt('На сколько вы оцените его?');
-    }
-    
-    personalMovieDB.movies[a] = b;
-}
+logger();
 
-
-
-
-
-console.log(personalMovieDB);
+const calc = (a, b) =>  {
+    console.log('1');
+    return a + b ;
+} ;
