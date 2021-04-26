@@ -1,47 +1,26 @@
-"use strict";
+'use strict';
 
-// To String
+const box = document.getElementById('box');
 
-// 1) 
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+console.log(box);
 
-// 2)
-console.log(typeof(5 + ''));
-
-const num = 5;
-
-console.log("https://vk.com/catalog/" + num);
-
-const fontSize = 26 + 'px';
-
-// To Number
-
-//1)
-console.log(typeof(Number('4')));
-
-//2)
-console.log(typeof(+'5'));
-
-//3)
-console.log(typeof(parseInt("15px", 10)));
+const btns = document.getElementsByTagName('button');
 
 
-let answ = +prompt("Hello", "");
+console.log(btns[0]);
 
-// To boolean 
+const circles = document.getElementsByClassName('circle');
 
-//0, '', null, undefined, NaN;
+console.log(circles);
 
-let switcher = null;
-switcher = 1;
+const hearts = document.querySelectorAll('.heart');
 
-if (switcher) {
-    console.log('Working...');
-}
 
-//2)
-console.log(typeof(Boolean('4')));
+console.log(hearts);
 
-//3)
-console.log(typeof(!!"44444"));
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart );
