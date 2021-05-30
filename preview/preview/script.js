@@ -1,14 +1,32 @@
 'use strict';
+const box = document.querySelector('.box'),
+      btn = document.querySelector('button');
+/* 
+const width = box.clientWidth;
+const height = box.clientHeight; */
+/* 
+const width = box.offsetWidth;
+const height = box.offsetHeight; */
 
-const p = document.querySelectorAll('p');
-console.log(p);
 
-function loadScript(src) {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = false;
-    document.body.append(script);
-}
+const width = box.scrollWidth;
+const height = box.scrollHeight;
 
-loadScript("test.js");
-loadScript("some.js");
+console.log(width, height);
+
+
+btn.addEventListener('click', () => {/* 
+    box.style.height = box.scrollHeight + 'px';
+     */
+    console.log(box.scrollTop);
+});
+
+console.log(box.getBoundingClientRect().left);
+
+
+const style = window.getComputedStyle(box);
+/* 
+console.log(style.display);
+ */
+
+console.log(document.documentElement.scrollTop);
