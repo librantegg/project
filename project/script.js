@@ -1,21 +1,24 @@
 'use strict';
 
-const now = new Date();
-/* 
-console.log(now.getUTCHours()); */
-/* 
-
-console.log(now.getTime()); */
-
-console.log(now.setHours(18));
-console.log(now);
-
-let start = new Date();
-
-for (let i = 0; i < 100000; i++) {
-    let some = i ** 3;
+function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function() {
+        console.log(`Hello ${this.name}`);
+    };
 }
 
-let end = new Date();
+User.prototype.exit = function() {
+    console.log(`пользователь ${this.name} ushel`);
+};
 
-alert(`Цикл отработал за ${end - start} миллисекнд`);
+const ivan = new User('Ivan', 28);
+const alex = new User('Alex', 20);
+
+ivan.hello();
+alex.hello();
+ivan.exit();
+
+console.log(ivan);
+console.log(alex);
