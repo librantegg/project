@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Timer 
 
-    const deadLine = '2021-05-27';
+    const deadLine = '2021-06-27';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -71,9 +71,9 @@ window.addEventListener('DOMContentLoaded', () => {
             hours = timer.querySelector('#hours'),
             minutes = timer.querySelector('#minutes'),
             seconds = timer.querySelector('#seconds'),
-            timeInterval = setInterval(updateClock, 1000);
+            timeInterval = setInterval(updateClock, 1000);//запустится только через секунду после начала
 
-        updateClock();
+        updateClock();//нужно для того чтобы первую секунду уже показывало значение не как в верстке
 
 
 
