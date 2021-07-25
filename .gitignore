@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/Food_dist/node_modules
 
 # testing
 /coverage
