@@ -1,54 +1,47 @@
- 'use strict';
+'use strict';
 
-//filters
+// localStorage.setItem('number', 5);
 
-// const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart'];
-// console.log(names);
-// const shortNames = names.filter(function(name) {
-//         if (name.length < 5) {return item;}
-//     });
+// // localStorage.removeItem('number');
 
 
-// console.log(shortNames);
+// localStorage.clear();
+
+// console.log(localStorage.getItem('number'));
 
 
-//map 
-// let answers = ['ivAN', 'anNA', 'HEllo'];
+const checkbox = document.querySelector('#checkbox'),
+      form = document.querySelector('form'),
+      change = document.querySelector('#color');
 
-// answers = answers.map(item => item.toLowerCase());
+if (localStorage.getItem('isChecked')) {
+    checkbox.checked = true;
+}
 
+if (localStorage.getItem('bg') === 'changed'){
+    form.style.backgroundColor = 'red';
+}
 
-// console.log(answers);
+checkbox.addEventListener('change', () => {
+    localStorage.setItem('isChecked', true);
+});
 
-// // every/some
+change.addEventListener('click', () => {
+    if (localStorage.getItem('bg') === 'changed') {
+        localStorage.removeItem('bg');
+        form.style.backgroundColor = '#fff';
+    } else {
+        localStorage.setItem('bg', 'changed');
+        form.style.backgroundColor = 'red';
+    }
+});
 
-// const some = [4, 43, 643];
-
-// console.log(some.every(item => typeof item === 'number'));
-
-//reduce
-
-// const arr = [4,5, 6, 1,5];
-
-// const res = arr.reduce((sum, current) => sum + current, 3);
-// console.log(res);
-
-
-// const arr = ['apple', 'pear', 'p;um'];
-
-// const res = arr.reduce((sum, current) => `${sum}, ${current}`);
-// console.log(res);
-
-const obj = {
-    ivan: 'persone',
-    ann: 'persone',
-    dog: 'animal',
-    cat: 'animal'
+const persone = {
+    name: 'Alex',
+    age: 24
 };
 
-const newArr = Object.entries(obj)
-.filter(item => item[1] == 'persone')
-.map(item => item[0]);
+const serializedPersone = JSON.stringify(persone);
+localStorage.setItem('alex', persone);
 
-console.log(newArr);
-console.log(obj);
+console.log(localStorage.getItem('alex'));
