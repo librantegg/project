@@ -7,12 +7,10 @@
 
 // const ref = /\d/ig;
 // console.log(ans.match(ref));
+let regexp = /^(\w+\s?)*$/;
+let str = "An input string that takes a long time or even makes this regexp to hang!";
 
-
-const str = 'My name is R2D2';
-
-console.log(str.match(/\D/ig));
-
+console.log( regexp.test(str) ); // false
 // \D
 // \W  
 
